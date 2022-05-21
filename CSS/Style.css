@@ -1,20 +1,93 @@
-  .scrolling-image {
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); /*Cursiva para H1 "font-family: 'Great Vibes', cursive;"*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid_container > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+html {
+    font-size: 70%;
+    height: 100%;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size: 1.2rem;
+    min-height: 100%;
+    background-color: rgba(250, 235, 215, 0.65);
+}
+
+.header {
+    grid-area: header;
+}
+
+.navbar {
     display: flex;
-    background: url(/TPO/Imagenes/Portada.jpg) repeat-x;
-    height: 170px;
-    width: 2560px;
-    padding: 1px;
-    border: 1px solid black;
-    animation: slide 10s linear infinite;
-    ;
+    justify-content: space-around   ;
+    grid-area: navbar;
+}
+
+.main {
+    grid-area: main;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.footer {
+    background-color: darkgrey;
+    grid-area: footer;
+}
+.iconos {
+    font-size: 2rem;
+}
+
+.grid_container { 
+    display: grid;
+    gap: 10px;
+    text-align: center;
+    grid-template:
+    "header" 180px
+    "navbar" 50px
+    "main" auto
+    "sidebar" 100px
+    "footer" 100px;
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: 100%;
+    }
+    .grid_container {
+        grid-template:
+        "header header" 180px
+        "navbar navbar" 25px
+        "main sidebar" auto 
+        "footer footer" 100px /
+        auto 200px;
+    }
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+     color:rgb(212, 186, 186);
   }
-  @keyframes slide {
-    0% {
-      transform: translate(0);
-    }
-    100% {
-      transform: translate(-1280px); /* The image width */
-    }
+
+  .imagen {
+    display: flex;
+    background: url(/Imagenes/Portada.jpg) repeat-x;
+    height: 180px;
+    padding: 0;
   }
   .textoCentrado {
     position: absolute;
@@ -22,24 +95,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-h1{
-    display: flex;
-    justify-content: center;
-    font-family: 'Great Vibes', cursive;
-    font-size: 80px;
-    margin-bottom: 10px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-     color:rgb(212, 186, 186);
-}
-
-.Nav{
+  .Nav{
     margin-top: 1px;
     border: 2px solid black;
     display: flex;
     justify-content: space-around;
     background-color: antiquewhite;
-    font-size: 18px;
+    font-size: 18px;;
 }
   
 .BtnNav{
@@ -51,8 +113,7 @@ h1{
     -o-transition-property: background-color, color;
     -o-transition-duration: 1s;
     background-color: antiquewhite;
-    padding: 2px 40px;
-    
+    width: 100%;
 }
 .BtnNav:hover{
     position: relative;
@@ -65,44 +126,4 @@ h1{
     -o-transition-duration: 1s;
     background-color:coral;
     color:black;    
-}
-
-footer{
-    clear: both;
-    display: flex;
-    justify-content: center;
-    align-content: end;
-    background-color: rgba(255, 255, 255, 0.6);
-    margin: 5px;
-    height: 40px;
-}
-
-body {
-    background-image: url(/TPO/Imagenes/test1.jpg);
-    background-repeat: repeat;
-    background-size:cover;
-
-}
-
-.Presentacion{
-	border: 3px solid black;
-	padding: 10px;
-	background-origin: padding-box;
-	height: 250px;
-    margin: 2px;
-    float: left;
-    width: 60%;
-    background-color: rgba(255, 255, 255, 0.6);
-
-}
-.Aside{
-    display: flex;
-    margin: 2px;
-    float: right;
-    background-origin: padding-box;
-    border: 3px solid black;
-    height: 250px;
-    padding: 25px;
-    width: 28%;
-    background-color: rgba(255, 255, 255, 0.6);
 }
