@@ -87,7 +87,7 @@ h1{
 
   .imagen {
     display: flex;
-    background: url(/Imagenes/Portada.jpg) repeat-x;
+    background: url(Imagenes/Portada.jpg) repeat-x;
     height: 180px;
     padding: 0;
   }
